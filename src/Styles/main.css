@@ -1,0 +1,186 @@
+/* ====== GLOBAL UTILITY CLASSES I USE ON THE DETAIL PAGE ====== */
+
+
+.center {
+  /* I use this class to center simple messages like "Loading..." */
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.error {
+  /* This is my generic error styling */
+  color: #b00020;
+  background-color: #ffe6e9;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: inline-block;
+}
+
+/* ====== SHOW DETAIL PAGE LAYOUT ====== */
+
+.show-detail {
+  /* Here I center the detail page and give it breathing room */
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 4rem;
+}
+
+/* Back link above the header */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+/* Header: image + info side-by-side on desktop */
+.show-detail__header {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* On small screens I stack image + text */
+@media (max-width: 768px) {
+  .show-detail__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.show-detail__image {
+  width: 100%;
+  border-radius: 1.25rem;
+  object-fit: cover;
+}
+
+.show-detail__info h1 {
+  font-size: clamp(1.7rem, 2.1vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.show-detail__genres {
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.show-detail__updated {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.show-detail__description {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ====== SEASONS TABS + EPISODE LIST ====== */
+
+.seasons {
+  margin-top: 2.5rem;
+}
+
+.seasons__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.seasons__header h2 {
+  font-size: 1.4rem;
+}
+
+.seasons__header p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Season tabs row */
+.seasons__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.season-tab {
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.season-tab:hover {
+  transform: translateY(-1px);
+  background-color: #f1f1ff;
+  border-color: #d0d0ff;
+}
+
+.season-tab--active {
+  background: linear-gradient(135deg, #5a4bff, #ff6fd8);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* Episodes list */
+.episodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ====== EPISODE CARD ====== */
+
+.episode-card {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.9rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 640px) {
+  .episode-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.episode-card__image {
+  width: 100%;
+  border-radius: 0.85rem;
+  object-fit: cover;
+}
+
+.episode-card__content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
